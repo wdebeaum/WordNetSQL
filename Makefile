@@ -19,6 +19,7 @@ install: install-wn install-lib
 docs: rdoc pod
 
 install-lib: word_net_sql.polyglot $(etcdir)/WordNetSQL
+	(cd trips/src/util/ && $(MAKE) install)
 	$(INSTALL_DATA) $< $(etcdir)/WordNetSQL/
 	# placate naming conventions for Perl and Ruby libraries
 	ln -sf $< $(etcdir)/WordNetSQL/WordNetSQL.pm
