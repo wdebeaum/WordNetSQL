@@ -103,4 +103,5 @@ clean:
 	      rdoc pod
 
 # wn.db is large and unlikely to need remaking, so we don't clean it unless we want distclean!
-distclean: rm -f wn.db
+distclean:
+	rm -f wn.db
