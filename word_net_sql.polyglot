@@ -382,6 +382,7 @@ sub apply_morph_to_multiword {
 
 # Fill in everything except the ----.
 sub fill_placeholders_in_frame {
+#  no warnings 'experimental::lexical_topic'; # squelch warning for next line
   my ($_, $prep) = @_;
   s/\bPP\b/$prep . ' something'/e;
   s/\bVERB-ing\b/acting/;

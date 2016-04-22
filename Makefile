@@ -1,11 +1,11 @@
 # WordNetSQL Makefile
 # William de Beaumont
-# $Date: 2015/07/28 19:15:23 $
+# $Date: 2015/10/28 20:41:08 $
 
 CONFIGDIR=trips/src/config
 include $(CONFIGDIR)/defs.mk
 include $(CONFIGDIR)/perl/defs.mk
-include $(CONFIGDIR)/ruby/defs.mk
+-include $(CONFIGDIR)/ruby/defs.mk
 WORDNET=$(shell grep wordnet-basepath $(CONFIGDIR)/WordFinder/defs.lisp | $(PERL) -p -e 's/^.*?"//; s/".*//; s/\/dict\/?$$//;')
 GLOSSTAG=$(WORDNET)/glosstag/standoff/
 SENSEMAP=$(WORDNET)/sensemap/
@@ -87,7 +87,7 @@ sense-map.psv: sense-map-to-psv.pl $(SENSEMAP)
 
 rdoc: word_net_sql.polyglot
 	rm -rf rdoc
-	$(RDOC) -E polyglot=rb -o $@ $<
+	if test -n "$(RDOC)" ; then $(RDOC) -E polyglot=rb -o $@ $< ; fi
 
 pod: word_net_sql.polyglot
 	mkdir -p pod
