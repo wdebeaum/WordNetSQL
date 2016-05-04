@@ -25,7 +25,7 @@ Also note that `make` will take a long time the first time, constructing the SQL
 
 WordNetSQL is licensed using the [GPL 2+](http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html) (see `LICENSE.txt`):
 
-WordNetSQL - makes an SQL DB from WN, and includes a library for accessing it
+WordNetSQL - makes an SQL DB from WN, and includes a library for accessing it  
 Copyright (C) 2016  Institute for Human & Machine Cognition
 
 This program is free software; you can redistribute it and/or
