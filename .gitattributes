@@ -1,1 +1,2 @@
-trips/ linguist-vendored
+trips/* linguist-vendored
+configure
