@@ -211,6 +211,8 @@ sub for_each_line_in_file {
   my ($filename, $fn) = @_;
   print "$filename\n";
   my $num_lines = `wc -l $filename`;
+  $num_lines =~ s/^\s+//;
+  $num_lines =~ s/\s.*//;
   my $progress = ($have_pb ? Term::ProgressBar->new({ count => $num_lines, ETA => 'linear' }) : undef);
   my $next_update = 0;
   open DATA, "<$filename" or die "Can't open $filename: $!";
